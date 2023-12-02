@@ -7,8 +7,7 @@ import Header from '../components/Header';
 
 function HomeScreen() {
     return (
-        <ScrollView>
-            <View style={styles.container}>
+        <ScrollView style={styles.container}>
                 <Header headerText={"Home"} />
                 <View style={styles.smallCardContainer}>
                     <View style={styles.smallCardContainerLeft}>
@@ -18,7 +17,7 @@ function HomeScreen() {
                         <SmallCardRight />
                     </View>
                 </View>
-                <Text style={styles.textTopArtists}>This is Kanye West</Text>
+                <Text style={styles.textTopArtists}>This is The Beatles</Text>
                 <ScrollView horizontal>
                     <View style={styles.bigCardContainer}>
                         <BigCard />
@@ -30,7 +29,6 @@ function HomeScreen() {
                         <RecentlyPlayed />
                     </View>
                 </ScrollView>
-            </View>
         </ScrollView>
     )
 }
@@ -39,28 +37,34 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'rgb(3 7 18)',
+        paddingLeft: 17
     },
     smallCardContainer: {
       flexDirection: 'row',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      paddingRight: 10,
+      gap: 8
     },
     bigCardContainer: {
         flexDirection: 'row',
     },
     bigCardContainerBot: {
         flexDirection: 'row',
-        marginBottom: 80
+        marginBottom: 120
     },
     textTopArtists: {
         color: '#fff',
         fontWeight: 'bold',
-        margin: 5,
-        marginTop: 20
+        marginTop: 25,
+        marginBottom: 15,
+        fontSize: 22
     },
     textRecentlyPlayed: {
         color: '#fff',
         fontWeight: 'bold',
-        margin: 5,
+        marginTop: 25,
+        marginBottom: 15,
+        fontSize: 22
     }
 });
 

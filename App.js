@@ -4,10 +4,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Octicons } from "@expo/vector-icons";
+import { Entypo } from '@expo/vector-icons'; 
 import HomeScreen from "./pages/HomeScreen";
 import SearchScreen from "./pages/SearchScreen";
 import ProfileScreen from "./pages/ProfileScreen";
 import DetailScreen from './pages/DetailScreen';
+import PremiumScreen from './pages/PremiumScreen';
+import SplashScreen from './pages/SplashScreen';
 
 const bottomTabNavigator = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -26,8 +29,8 @@ function MainTabScreen() {
             alignItems: "center",
             backgroundColor: "black",
             marginHorizontal: 0,
-            height: 64,
-            paddingBottom: 10,
+            height: 100,
+            paddingBottom: 50,
             paddingTop: 10,
           },
           tabBarIcon: ({ focused, color, size }) => {
@@ -45,8 +48,13 @@ function MainTabScreen() {
               iconName = "person";
               color = focused ? "white" : "darkgray";
             }
+            else if (route.name === "Premium") {
+              icon = "spotify";
+              colorIcon = focused ? "white" : "darkgray";
+              return <Entypo name={icon} color={colorIcon} size={25}/>
+            }
 
-            return <Octicons name={iconName} size={22} color={color} />;
+            return <Octicons name={iconName} size={25} color={color} />;
           },
           headerShown: false,
         })}
@@ -63,6 +71,10 @@ function MainTabScreen() {
           name="Profile" 
           component={ProfileScreen} 
         />
+        <bottomTabNavigator.Screen 
+          name="Premium" 
+          component={PremiumScreen} 
+        />
       </bottomTabNavigator.Navigator>
   );
 }
@@ -70,9 +82,10 @@ function MainTabScreen() {
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Main">
+      <Stack.Navigator initialRouteName="SplashScreen">
         <Stack.Screen name="DetailScreen" component={DetailScreen} options={{ headerShown : false }} />
         <Stack.Screen name="Main" component={MainTabScreen} options={{ headerShown : false }}/>
+        <Stack.Screen name="SplashScreen" component={SplashScreen} options={{ headerShown : false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   )

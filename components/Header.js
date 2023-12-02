@@ -11,21 +11,21 @@ function Header({headerText}) {
 
 const styles = StyleSheet.create({
     container: {
-        margin: 5,
         flexDirection: 'row',
         alignItems: 'center',
         gap: 10,
-        marginVertical: 15,
-        marginTop: 30,
+        marginBottom: 15,
+        marginTop: 70,
     },
     image: {
-        width: 30,
-        height: 30,
+        width: 35,
+        height: 35,
         borderRadius: 50
     },
     text: {
         color: '#fff',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        fontSize: 23
     }
 });
 

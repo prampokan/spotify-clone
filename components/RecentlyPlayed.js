@@ -12,7 +12,7 @@ function RecentlyPlayed() {
         const options = {
           method: 'GET',
           headers: {
-            'X-RapidAPI-Key': 'f64e5c0f67mshf9543fcc89a16c1p13dcffjsnb9fe5be28d4b',
+            'X-RapidAPI-Key': 'e4f156a2e3mshd1fd73ce4ffb6fep1c966fjsnd69fcaa0d9cc',
             'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
           }
         };
@@ -52,17 +52,18 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     card: {
-        margin: 5,
+        marginRight: 17,
         backgroundColor: 'rgb(3 7 18)',
-        width: 150
+        width: 170
      },
      cardImage: {
-        width: 150,
-        height: 150,
+        width: 170,
+        height: 170,
      },
      cardTitle: {
-        fontSize: 9,
-        color: 'gray'
+        fontSize: 13,
+        color: 'gray',
+        marginTop: 7
      },
 });
 

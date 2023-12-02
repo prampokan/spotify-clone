@@ -22,7 +22,7 @@ function SearchScreen() {
       const options = {
         method: 'GET',
         headers: {
-          'X-RapidAPI-Key': 'f64e5c0f67mshf9543fcc89a16c1p13dcffjsnb9fe5be28d4b',
+          'X-RapidAPI-Key': 'e4f156a2e3mshd1fd73ce4ffb6fep1c966fjsnd69fcaa0d9cc',
           'X-RapidAPI-Host': 'shazam.p.rapidapi.com',
         },
       };
@@ -60,7 +60,6 @@ function SearchScreen() {
             }}
             >
           <View style={styles.songContainer}>
-            
               <Image
                   source={{ uri: item.track.images.coverart}}
                   style={styles.songImage} 
@@ -81,41 +80,42 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'rgb(3 7 18)',
+    paddingHorizontal: 17
   },
   text: {
     color: '#fff',
   },
   input: {
-    height: 40,
-    width: 350,
-    margin: 5,
+    height: 50,
+    width: 380,
     borderWidth: 1,
-    padding: 10,
+    paddingLeft: 15,
     color: 'black',
     backgroundColor: '#fff',
-    borderRadius: 10,
-    fontSize: 12,
+    borderRadius: 7,
+    fontSize: 18,
     marginBottom: 20
   },
   songContainer: {
     flexDirection: 'row',
-    margin: 5,
+    marginVertical: 5,
     gap: 10
   },
   songImage: {
-    width: 50,
-    height: 50,
+    width: 60,
+    height: 60,
   },
   songText: {
     justifyContent: 'center'
   },
   songTitle: {
     color: '#fff',
-    fontSize: 12
+    fontSize: 15,
+    marginBottom: 5
   },
   songArtist: {
     color: 'gray',
-    fontSize: 10
+    fontSize: 13
   },
 });
 
